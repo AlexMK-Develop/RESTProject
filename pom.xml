@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  
+  	<properties>
+		<springboot.version>1.5.6.RELEASE</springboot.version>
+		<springfox.version>2.6.1</springfox.version>
+		<slf4j.version>1.7.26</slf4j.version>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+  <groupId>amk</groupId>
+  <artifactId>RestProject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>RestProject</name>
+  <url>http://maven.apache.org</url>
+  
+    <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.spockframework</groupId>
+        <artifactId>spock-bom</artifactId>
+        <version>2.0-M4-groovy-3.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <!-- Mandatory dependencies for using Spock -->
+    <dependency>
+      <groupId>org.spockframework</groupId>
+      <artifactId>spock-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.spockframework</groupId>
+      <artifactId>spock-junit4</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+
+  	<dependency>
+  		<groupId>io.springfox</groupId>
+  		<artifactId>springfox-swagger-ui</artifactId>
+ 		<version>2.9.2</version>
+	</dependency>
+	<dependency>
+		<!-- Import dependency management from Spring Boot -->
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-dependencies</artifactId>
+		<version>${springboot.version}</version><!--$NO-MVN-MAN-VER$ -->
+		<type>pom</type>
+		<scope>import</scope>
+	</dependency>
+					
+					<!--Swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox.version}</version><!-- $NO_MVN_MAN_VER$ -->
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-staticdocs</artifactId>
+			<version>${springfox.version}</version><!-- $NO_MVN_MAN_VER$ -->
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox.version}</version><!-- $NO_MVN_MAN_VER$ -->
+		</dependency>
+		<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>4.2.1.RELEASE</version>
+</dependency>
+					<!--Spock -->
+					
+	    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.6.2</version>
+        <scope>test</scope>
+			    </dependency>
+			    
+	     <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+    </dependency>
+  </dependencies>
+					
+<build>
+  <plugins>
+      <plugin>
+        <groupId>org.codehaus.gmavenplus</groupId>
+        <artifactId>gmavenplus-plugin</artifactId>
+        <version>1.12.0</version>
+      </plugin>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+    </plugin>
+</plugins>
+</build>
+</project>
